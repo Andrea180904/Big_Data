@@ -6,29 +6,33 @@ A Python producer sends fake weather events (temperature, humidity, city, timest
 and a Python consumer reads them in real time.
 
 ## 2. Chosen tool: Apache Kafka
-
+Apache Kafka is a distributed event streaming platform capable of handling trillions of events per day.
 ## 3. Why Kafka?
 Kafka is a distributed messaging and streaming platform.  
 It is well suited for this project because:
 
 - It can handle a continuous flow of events in real time.
-- Producers and consumers are decoupled: they do not need to know each other.
+- Producers and consumers operate independently.
 - Events are stored in a durable log, so other tools (Spark, Flink, databases…) can also read the same stream.
 - It is a very common component in modern Big Data architectures (data pipelines, IoT, log collection, etc.).
 
 ## 4. Installation steps
-1. Install Docker and Docker Compose on your machine.
+Prerequisites
 
-2. Clone the repository:
+Docker & Docker Compose installed
+Python 3.8+ with kafka-python library
+
+
+1. Clone the repository:
 
    git clone https://github.com/Andrea180904/Big_Data.git
    cd Big_Data
 
-3. Start Kafka and Zookeeper using Docker Compose:
+2. Start Kafka and Zookeeper using Docker Compose:
 
    docker compose up -d
 
-4. Check that the containers are running:
+3. Check that the containers are running:
 
    docker ps
 
@@ -121,7 +125,7 @@ During the setup we faced several issues:
   then using `git add` and `git rebase --continue` before pushing.
 
 ## 8. My Setup Notes
-At the beginning I had never run Kafka locally, so I learned:
+At the beginning we never run Kafka locally, so we learned:
 
 - how to start Kafka and Zookeeper with Docker Compose,
 - how client configuration (bootstrap servers, listeners, advertised listeners)
@@ -130,9 +134,7 @@ At the beginning I had never run Kafka locally, so I learned:
 - how to debug typical errors such as "NoBrokersAvailable",
 - how to solve a small Git conflict during a rebase.
 
-This small project helped me to understand Kafka not only from a theoretical
-point of view, but also from a very practical DevOps point of view
-(containers, ports, configuration, logs, etc.).
+This small project helped us to understand Kafka not only from a theoretical point of view, but also from a very practical DevOps point of view (containers, ports, configuration, logs, etc.).We also gained experience with Git workflows.It will be useful for us, especially if we have an internship as data engineers.Most importantly, this project helped us to use what we learned in class in real practice.
 
 ## 9. Folder structure
 - docker-compose.yml
