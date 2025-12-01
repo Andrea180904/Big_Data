@@ -28,13 +28,13 @@ It is well suited for this project because:
 
    docker compose up -d
 
-4. (Optional) Check that the containers are running:
+4. Check that the containers are running:
 
    docker ps
 
-   You should see:
-   - one container "zookeeper" (confluentinc/cp-zookeeper)
-   - one container "kafka" (confluentinc/cp-kafka)
+Kafka and Zookeeper containers running (docker ps):
+
+![Docker ps](Screenshots/docker-ps.png)
 
 ## 5. Minimal working example
 This project simulates a real-time weather stream.
@@ -44,6 +44,9 @@ This project simulates a real-time weather stream.
 The producer generates fake weather events every 2 seconds
 (city, temperature, humidity, timestamp) and sends them to a Kafka topic
 called "weather".
+Producer sending weather events:
+
+![Producer](Screenshots/producer.png)
 
 To run it:
 
@@ -55,6 +58,9 @@ py producer.py
 The consumer subscribes to the same "weather" topic and prints all incoming
 messages in real time.
 
+Consumer receiving the events:
+
+![Consumer](Screenshots/consumer.png)
 To run it:
 
 cd app
